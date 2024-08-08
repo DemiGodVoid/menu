@@ -12,4 +12,8 @@ sudo apt-get install -y python3-pip
 echo "Installing requests module..."
 pip3 install requests
 
+# Install ngrok using snap
+echo "Installing ngrok..."
+sudo snap install ngrok
+
 echo "Installation complete."
