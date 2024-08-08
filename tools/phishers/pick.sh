@@ -15,6 +15,7 @@ case $choice in
     1)
         # Run camphish.sh
         echo "Start camphisher by saying cd tools/phishers and then bash camphish.sh"
+        pause
         ;;
     0)
         # Exit the script
