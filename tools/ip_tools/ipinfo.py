@@ -1,7 +1,7 @@
 import requests
 
 def get_ip_info(ip):
-    url = f"https://api.ipapi.com/api/{ip}?access_key=YOUR_ACCESS_KEY"
+    url = f"https://ipinfo.io/{ip}/json"
     response = requests.get(url)
     
     # Print raw response for debugging
@@ -22,9 +22,9 @@ def main():
     print("\nIP Information:")
     print(f"IP: {info.get('ip', 'N/A')}")
     print(f"City: {info.get('city', 'N/A')}")
-    print(f"Region: {info.get('region_name', 'N/A')}")
-    print(f"Country: {info.get('country_name', 'N/A')}")
-    print(f"Location: {info.get('latitude', 'N/A')}, {info.get('longitude', 'N/A')}")
+    print(f"Region: {info.get('region', 'N/A')}")
+    print(f"Country: {info.get('country', 'N/A')}")
+    print(f"Location: {info.get('loc', 'N/A')}")
     print(f"ISP: {info.get('org', 'N/A')}")
     
     # Pause until a key is pressed
