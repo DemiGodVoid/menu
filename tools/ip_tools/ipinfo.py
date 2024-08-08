@@ -1,4 +1,6 @@
 import requests
+import whois
+import socket
 
 def get_ip_info(ip):
     url = f"https://ipinfo.io/{ip}/json"
@@ -11,6 +13,22 @@ def get_ip_info(ip):
     else:
         print(f"Error: Unable to fetch data (status code: {response.status_code})")
         return {}
+
+def get_whois_info(domain):
+    try:
+        w = whois.whois(domain)
+        return w
+    except Exception as e:
+        print(f"Error: Unable to fetch WHOIS data ({str(e)})")
+        return {}
+
+def get_dns_info(domain):
+    try:
+        ip = socket.gethostbyname(domain)
+        return ip
+    except socket.gaierror:
+        print(f"Error: Unable to resolve DNS for {domain}")
+        return "N/A"
 
 def main():
     ip = input("Enter the IP address you want to get information about: ")
@@ -35,6 +53,20 @@ def main():
     print(f"Country: {info.get('country', 'N/A')}")
     print(f"Location: {info.get('loc', 'N/A')}")
     print(f"ISP: {info.get('org', 'N/A')}")
+
+    if 'hostname' in info and info['hostname'] != 'N/A':
+        domain = info['hostname']
+        print(f"\nPerforming WHOIS lookup for {domain}...")
+        whois_info = get_whois_info(domain)
+        print("\nWHOIS Information:")
+        for key, value in whois_info.items():
+            print(f"  {key}: {value}")
+
+        print(f"\nPerforming DNS lookup for {domain}...")
+        dns_info = get_dns_info(domain)
+        print(f"\nDNS Information:")
+        print(f"  Domain: {domain}")
+        print(f"  IP Address: {dns_info}")
     
     # Pause until a key is pressed
     input("\nPress Enter to continue...")
