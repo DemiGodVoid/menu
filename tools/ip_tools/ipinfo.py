@@ -23,6 +23,9 @@ def main():
     print(f"Country: {info.get('country_name', 'N/A')}")
     print(f"Location: {info.get('latitude', 'N/A')}, {info.get('longitude', 'N/A')}")
     print(f"ISP: {info.get('org', 'N/A')}")
+    
+    # Pause until a key is pressed
+    input("\nPress Enter to continue...")
 
 if __name__ == "__main__":
     main()
