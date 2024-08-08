@@ -21,6 +21,8 @@ echo "Installing node.js..."
 sudo apt install nodejs npm
 npm install
 npm install express multer
+npm install express
+
 npm init -y
 npm install express multer
 
