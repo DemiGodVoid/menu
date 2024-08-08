@@ -4,6 +4,9 @@ def get_ip_info(ip):
     url = f"https://api.ipapi.com/api/{ip}?access_key=YOUR_ACCESS_KEY"
     response = requests.get(url)
     
+    # Print raw response for debugging
+    print("Raw response:", response.text)
+    
     # Check if the request was successful
     if response.status_code == 200:
         data = response.json()
