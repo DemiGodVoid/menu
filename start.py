@@ -20,7 +20,7 @@ def display_menu():
        Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
     """)
     print("1: IP Tools")
-    print("2: Camphisher")
+    print("2: Phishers(Gps pin pointer/Camera Phisher)")
     print("---------------")
     print("9: Install requirements")
     print("10: Updates")
