@@ -1,14 +1,19 @@
 #!/bin/bash
 
-# Echo commands to the terminal
-echo "Starting main server.js..."
+# Navigate to the directory containing the server files
+cd "$(dirname "$0")"
 
-# Run server.js with Node.js
+# Start the Node.js server
+echo "Starting main server.js..."
 node server2.js &
 
-# Start ngrok (adjust the command if needed for your setup)
-echo "Starting ngrok..."
-ngrok http 3000 &
+# Wait for the server to start
+sleep 5
 
-# Wait for user input to keep the script running
-read -p "Press [Enter] to stop..."
+# Start ngrok
+echo "Starting ngrok..."
+ngrok http 3000 
+
+# Wait for user input to stop the script
+echo "Press [Enter] to stop..."
+read
