@@ -19,5 +19,9 @@ sudo snap install ngrok
 # Install Node.js
 echo "Installing node.js..."
 sudo apt install nodejs npm
+npm install
+npm install express multer
+npm init -y
+npm install express multer
 
 echo "Installation complete."
