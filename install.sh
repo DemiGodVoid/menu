@@ -16,4 +16,8 @@ pip3 install requests
 echo "Installing ngrok..."
 sudo snap install ngrok
 
+# Install Node.js
+echo "Installing node.js..."
+sudo apt install nodejs npm
+
 echo "Installation complete."
