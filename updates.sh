@@ -9,7 +9,7 @@ echo "------------------"
 echo "v1.0.0-alpha"
 echo "~~~~~~~~~~~"
 echo "Added: IP info lookup"
-echo ""
+echo "Added Gps pin pointer"
 echo "Added: Cam Phisher"
 echo "----------------------"
 
