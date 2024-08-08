@@ -1,6 +1,24 @@
 import os
 
 def display_menu():
+    print("""
+                      ______
+                   .-"      "-.
+                  /            \\
+                 |              |
+                 |,  .-.  .-.  ,|
+                 | )(_o/  \\o_)( |
+                 |/     /\\     \\|
+       (@_       (_     ^^     _)
+  _     ) \\_______\\__|IIIIII|__/__________________________
+ (_)@8@8{}<________|-\IIIIII/-|___________________________>
+        )_/        \\          /
+       (@           `--------`
+       THE GHOST SQUAD
+       Tool: T.G.S
+       Version: 1.0.0-Alpha
+       Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
+    """)
     print("1: IP Tools")
     print("2: Camphisher")
     print("0: Exit")
@@ -17,7 +35,7 @@ def main():
         if choice == '1':
             os.system('python3 tools/ip_tools/ipinfo.py')
 
-        elif choice =="2":
+        elif choice == "2":
             os.system('bash tools/phishers/pick.sh')
             
         elif choice == '0':
