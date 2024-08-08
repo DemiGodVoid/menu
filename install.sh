@@ -26,4 +26,7 @@ npm install express
 npm init -y
 npm install express multer
 
+#Install others
+sudo apt-get install whois
+
 echo "Installation complete."
