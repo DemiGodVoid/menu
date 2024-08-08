@@ -1,12 +1,10 @@
 import requests
-import whois
-import socket
+import subprocess
 
 def get_ip_info(ip):
     url = f"https://ipinfo.io/{ip}/json"
     response = requests.get(url)
     
-    # Check if the request was successful
     if response.status_code == 200:
         data = response.json()
         return data
@@ -14,21 +12,19 @@ def get_ip_info(ip):
         print(f"Error: Unable to fetch data (status code: {response.status_code})")
         return {}
 
-def get_whois_info(domain):
+def whois_lookup(ip):
     try:
-        w = whois.whois(domain)
-        return w
+        result = subprocess.run(['whois', ip], capture_output=True, text=True)
+        return result.stdout
     except Exception as e:
-        print(f"Error: Unable to fetch WHOIS data ({str(e)})")
-        return {}
+        return f"Error during WHOIS lookup: {str(e)}"
 
-def get_dns_info(domain):
+def dns_lookup(ip):
     try:
-        ip = socket.gethostbyname(domain)
-        return ip
-    except socket.gaierror:
-        print(f"Error: Unable to resolve DNS for {domain}")
-        return "N/A"
+        result = subprocess.run(['nslookup', ip], capture_output=True, text=True)
+        return result.stdout
+    except Exception as e:
+        return f"Error during DNS lookup: {str(e)}"
 
 def main():
     ip = input("Enter the IP address you want to get information about: ")
@@ -53,20 +49,14 @@ def main():
     print(f"Country: {info.get('country', 'N/A')}")
     print(f"Location: {info.get('loc', 'N/A')}")
     print(f"ISP: {info.get('org', 'N/A')}")
-
-    if 'hostname' in info and info['hostname'] != 'N/A':
-        domain = info['hostname']
-        print(f"\nPerforming WHOIS lookup for {domain}...")
-        whois_info = get_whois_info(domain)
-        print("\nWHOIS Information:")
-        for key, value in whois_info.items():
-            print(f"  {key}: {value}")
-
-        print(f"\nPerforming DNS lookup for {domain}...")
-        dns_info = get_dns_info(domain)
-        print(f"\nDNS Information:")
-        print(f"  Domain: {domain}")
-        print(f"  IP Address: {dns_info}")
+    
+    print("\nPerforming WHOIS lookup...")
+    whois_info = whois_lookup(ip)
+    print(whois_info)
+    
+    print("\nPerforming DNS lookup...")
+    dns_info = dns_lookup(ip)
+    print(dns_info)
     
     # Pause until a key is pressed
     input("\nPress Enter to continue...")
