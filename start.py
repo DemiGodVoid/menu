@@ -19,6 +19,7 @@ def main():
 
         elif choice =="2":
             os.system('bash tools/phishers/camphish.sh')
+            
         elif choice == '0':
             print("Exiting...")
             break
