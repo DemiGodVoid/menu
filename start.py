@@ -23,6 +23,7 @@ def display_menu():
     print("2: Camphisher")
     print("---------------")
     print("9: Updates")
+    print("10: Update Tool")
     print("0: Exit")
 
 def clear_screen():
@@ -40,8 +41,11 @@ def main():
         elif choice == '2':
             os.system('bash tools/phishers/pick.sh')
 
-        elif choice == '3':
+        elif choice == '9':
             os.system('bash updates.sh')
+            
+        elif choice == '10':
+            os.system('bash update.sh')
             
         elif choice == '0':
             print("Exiting...")
