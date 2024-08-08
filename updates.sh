@@ -13,9 +13,6 @@ echo ""
 echo "Added: Cam Phisher"
 echo "----------------------"
 
-# Pause for a few seconds to ensure visibility
-sleep 10
-
 # Wait for the user to press a key
 echo ""
 echo "Press any key to exit..."
