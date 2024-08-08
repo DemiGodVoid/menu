@@ -1,10 +1,16 @@
 import requests
 
 def get_ip_info(ip):
-    url = f"https://api.ipapi.com/{ip}?access_key=YOUR_ACCESS_KEY"
+    url = f"https://api.ipapi.com/api/{ip}?access_key=YOUR_ACCESS_KEY"
     response = requests.get(url)
-    data = response.json()
-    return data
+    
+    # Check if the request was successful
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        print(f"Error: Unable to fetch data (status code: {response.status_code})")
+        return {}
 
 def main():
     ip = input("Enter the IP address you want to get information about: ")
