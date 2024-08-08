@@ -4,9 +4,6 @@ def get_ip_info(ip):
     url = f"https://ipinfo.io/{ip}/json"
     response = requests.get(url)
     
-    # Print raw response for debugging
-    print("Raw response:", response.text)
-    
     # Check if the request was successful
     if response.status_code == 200:
         data = response.json()
