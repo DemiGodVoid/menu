@@ -21,6 +21,8 @@ def display_menu():
     """)
     print("1: IP Tools")
     print("2: Camphisher")
+    print("---------------")
+    print("9: Updates")
     print("0: Exit")
 
 def clear_screen():
@@ -35,8 +37,11 @@ def main():
         if choice == '1':
             os.system('python3 tools/ip_tools/ipinfo.py')
 
-        elif choice == "2":
+        elif choice == '2':
             os.system('bash tools/phishers/pick.sh')
+
+        elif choice == '3':
+            os.system('bash updates.sh')
             
         elif choice == '0':
             print("Exiting...")
