@@ -13,9 +13,9 @@ read -p "Choose an option: " choice
 # Handle user input
 case $choice in
     1)
-        # Run camphish.sh
+        # Display a message and wait for user to press Enter
         echo "Start camphisher by saying cd tools/phishers and then bash camphish.sh"
-        pause
+        read -p "Press [Enter] to return to the menu or exit..."
         ;;
     0)
         # Exit the script
@@ -27,3 +27,6 @@ case $choice in
         echo "Invalid choice, please enter 1 or 0."
         ;;
 esac
+
+# Optionally, you could loop the script to show the menu again after handling an option
+exec "$0"
