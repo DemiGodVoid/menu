@@ -10,7 +10,7 @@ def main():
         choice = input("Enter your choice: ").strip()
         
         if choice == '1':
-            os.system('python tools/ip_tools/ipinfo.py')
+            os.system('python3 tools/ip_tools/ipinfo.py')
         elif choice == '0':
             print("Exiting...")
             break
