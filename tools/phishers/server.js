@@ -8,6 +8,13 @@ const port = 3000;
 app.use(express.json({ limit: '10mb' }));
 app.use(express.static(__dirname));
 
+// Middleware to log the IP address of incoming requests
+app.use((req, res, next) => {
+    const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    console.log(`Incoming request from IP: ${ipAddress}`);
+    next();
+});
+
 // Serve upload.html at the root path
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/upload.html'));
