@@ -22,8 +22,9 @@ def display_menu():
     print("1: IP Tools")
     print("2: Camphisher")
     print("---------------")
-    print("9: Updates")
-    print("10: Update Tool")
+    print("9: Install requirements")
+    print("10: Updates")
+    print("11: Update Tool")
     print("0: Exit")
 
 def clear_screen():
@@ -42,11 +43,13 @@ def main():
             os.system('bash tools/phishers/pick.sh')
 
         elif choice == '9':
-            os.system('bash updates.sh')
+            os.system('bash install.sh')
             
         elif choice == '10':
+            os.system('bash updates.sh')
+
+        elif choice == '11':
             os.system('bash update.sh')
-            
         elif choice == '0':
             print("Exiting...")
             break
