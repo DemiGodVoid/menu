@@ -14,7 +14,7 @@ read -p "Choose an option: " choice
 case $choice in
     1)
         # Run camphish.sh
-        bash /root/t.g.s/tools/phishers/camphish.sh
+        echo "Start camphisher by saying cd tools/phishers and then bash camphish.sh"
         ;;
     0)
         # Exit the script
