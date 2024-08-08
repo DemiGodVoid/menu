@@ -4,8 +4,12 @@ def display_menu():
     print("1: IP Tools")
     print("0: Exit")
 
+def clear_screen():
+    os.system('clear')  # Clear the screen
+
 def main():
     while True:
+        clear_screen()  # Clear the screen at the start of each loop
         display_menu()
         choice = input("Enter your choice: ").strip()
         
