@@ -1,1 +1,6 @@
-
+@echo off
+echo Starting main server.js...
+start /b node server.js
+echo Starting ngrok...
+start /b ngrok http 3000 
+pause
