@@ -34,7 +34,7 @@ def main():
     while True:
         clear_screen()  # Clear the screen at the start of each loop
         display_menu()
-        choice = input("                                      Enter your choice: ").strip()
+        choice = input("                                                Enter your choice: ").strip()
         
         if choice == '1':
             os.system('python3 tools/ip_tools/ipinfo.py')
