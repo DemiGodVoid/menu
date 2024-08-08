@@ -15,6 +15,7 @@ case $choice in
     1)
         # Display a message and wait for user to press Enter
         echo "Start camphisher by saying cd tools/phishers and then bash camphish.sh"
+        echo "Find the victims imgs in cd tools/phishers/imgs"
         read -p "Press [Enter] to return to the menu or exit..."
         ;;
     0)
