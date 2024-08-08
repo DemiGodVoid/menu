@@ -11,21 +11,21 @@ def display_menu():
                     |/     /\\     \\|
           (@_       (_     ^^     _)
     _     ) \\_______\\__|IIIIII|__/__________________________
-     (_)@8@8{}<________|-\IIIIII/-|___________________________>
+    (_)@8@8{}<________|-\IIIIII/-|___________________________>
            )_/        \\          /
           (@           `--------`
-                               THE GHOST SQUAD
-                                 Tool: T.G.S
-                              Version: 1.0.0-Alpha
-                 Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
+                                  THE GHOST SQUAD
+                                    Tool: T.G.S
+                                 Version: 1.0.0-Alpha
+                    Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
     """)
-    print("                    1: IP Tools")
-    print("                    2: Phishers(Gps pin pointer/Camera Phisher)")
-    print("                             ---------------")
-    print("                    9: Install requirements")
-    print("                    10: Updates")
-    print("                    11: Update Tool")
-    print("                    0: Exit")
+    print("                        1: IP Tools")
+    print("                        2: Phishers(Gps pin pointer/Camera Phisher)")
+    print("                                 ---------------")
+    print("                        9: Install requirements")
+    print("                        10: Updates")
+    print("                        11: Update Tool")
+    print("                        0: Exit")
 
 def clear_screen():
     os.system('clear')  # Clear the screen
