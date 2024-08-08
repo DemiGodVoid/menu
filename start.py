@@ -2,6 +2,7 @@ import os
 
 def display_menu():
     print("1: IP Tools")
+    print("2: Camphisher")
     print("0: Exit")
 
 def clear_screen():
@@ -15,6 +16,9 @@ def main():
         
         if choice == '1':
             os.system('python3 tools/ip_tools/ipinfo.py')
+
+        elif choice =="2":
+            os.system('bash tools/phishers/camphish.sh')
         elif choice == '0':
             print("Exiting...")
             break
