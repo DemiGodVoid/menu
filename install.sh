@@ -18,19 +18,19 @@ sudo snap install ngrok
 
 # Install Node.js
 echo "Installing node.js..."
-sudo apt install nodejs npm
+sudo apt install -y nodejs npm
 npm install
 npm install express multer
-npm install express
 
 npm init -y
 npm install express multer
 
-#Install Discord Bot
-pip install discord.py
+# Install Discord Bot library
+echo "Installing discord.py..."
+pip3 install discord.py
 
-
-#Install others
-sudo apt-get install whois
+# Install other utilities
+echo "Installing whois..."
+sudo apt-get install -y whois
 
 echo "Installation complete."
