@@ -8,12 +8,12 @@ NC='\033[0m'  # No color
 clear
 
 # Display menu options
-echo -e "                                                                                                                           ${RED}1. Cam Phish${NC}"
-echo -e "                                                                                                                           ${RED}2. gps pin pointer${NC}"
-echo -e "                                                                                                                           ${RED}0. Exit${NC}"
+echo -e "                                                                                                      ${RED}1. Cam Phish${NC}"
+echo -e "                                                                                                      ${RED}2. gps pin pointer${NC}"
+echo -e "                                                                                                      ${RED}0. Exit${NC}"
 
 # Read user input
-read -p "                                                                                                                          $(echo -e ${RED}Choose an option: ${NC})" choice
+read -p "                                                                                            $(echo -e ${RED}Choose an option: ${NC})" choice
 
 # Handle user input
 case $choice in
