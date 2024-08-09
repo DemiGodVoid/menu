@@ -22,7 +22,7 @@ echo -e "                                                                       
 echo -e "                                                                                                      ${RED}0. Exit${NC}"
 
 # Read user input
-read -p "                                                                                                      ${RED}Choose an option: ${NC}" choice
+read -p "                                                                                                           Choose an option: " choice
 
 # Handle user input
 case $choice in
