@@ -40,4 +40,8 @@ async def t_g_s(ctx):
     """
     await ctx.send(commands_list)
 
+@bot.command()
+async def ping(ctx):
+    await ctx.send("Pong")
+
 bot.run(TOKEN)
