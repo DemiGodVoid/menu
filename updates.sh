@@ -6,6 +6,9 @@ clear
 # Display update information
 echo "UPDATES"
 echo "------------------"
+echo "v1.0.1-alpha"
+echo "Added: Kik Phishing Page"
+echo "------------------"
 echo "v1.0.0-alpha"
 echo "~~~~~~~~~~~"
 echo "Added: IP info lookup"
