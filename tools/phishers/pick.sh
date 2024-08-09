@@ -8,21 +8,21 @@ NC='\033[0m'  # No color
 clear
 
 # Display menu options
-echo -e "                                                                         ${RED}________  ___  ___  ___  ________  ___  ___  _______   ________  ________${NC}"      
-echo -e "                                                                         ${RED}|\   __  \|\  \|\  \|\  \|\   ____\|\  \|\  \|\  ___ \ |\   __  \|\   ____\${NC}"     
+echo -e "                                                                         ${RED}________  ___  ___  ___  ________  ___  ___  _______   ________  ________ ${NC}"      
+echo -e "                                                                         ${RED}|\   __  \|\  \|\  \|\  \|\   ____\|\  \|\  \|\  ___ \ |\   __  \|\   ____\ ${NC}"     
 echo -e "                                                                         ${RED}\ \  \|\  \ \  \\\  \ \  \ \  \___|\ \  \\\  \ \   __/|\ \  \|\  \ \  \___|_${NC}"    
-echo -e "                                                                         ${RED}\ \   ____\ \   __  \ \  \ \_____  \ \   __  \ \  \_|/_\ \   _  _\ \_____  \${NC}"   
-echo -e "                                                                         ${RED}\ \  \___|\ \  \ \  \ \  \|____|\  \ \  \ \  \ \  \_|\ \ \  \\  \\|____|\  \${NC}"  
-echo -e "                                                                         ${RED}\ \__\    \ \__\ \__\ \__\____\_\  \ \__\ \__\ \_______\ \__\\ _\ ____\_\  \${NC}" 
-echo -e "                                                                         ${RED}\|__|     \|__|\|__|\|__|\_________\|__|\|__|\|_______|\|__|\|__|\_________\${NC}"
-echo -e "                                                                         ${RED}                             \|_________|                            \|_________|${NC}"
+echo -e "                                                                         ${RED}\ \   ____\ \   __  \ \  \ \_____  \ \   __  \ \  \_|/_\ \   _  _\ \_____  \ ${NC}"   
+echo -e "                                                                         ${RED}\ \  \___|\ \  \ \  \ \  \|____|\  \ \  \ \  \ \  \_|\ \ \  \\  \\|____|\  \ ${NC}"  
+echo -e "                                                                         ${RED}\ \__\    \ \__\ \__\ \__\____\_\  \ \__\ \__\ \_______\ \__\\ _\ ____\_\  \ ${NC}" 
+echo -e "                                                                         ${RED}\|__|     \|__|\|__|\|__|\_________\|__|\|__|\|_______|\|__|\|__|\_________\ ${NC}"
+echo -e "                                                                         ${RED}                         \|_________|                            \|_________|${NC}"
 
 echo -e "                                                                                                      ${RED}1. Cam Phish${NC}"
 echo -e "                                                                                                      ${RED}2. GPS Pin Pointer${NC}"
 echo -e "                                                                                                      ${RED}0. Exit${NC}"
 
 # Read user input
-read -p "                                                                                                      $(echo -e ${RED}Choose an option: ${NC})" choice
+read -p "                                                                                                      ${RED}Choose an option: ${NC}" choice
 
 # Handle user input
 case $choice in
@@ -30,13 +30,13 @@ case $choice in
         # Display a message and wait for user to press Enter
         echo -e "                                                                                                      ${RED}Start camphisher by saying cd tools/phishers and then bash camphish.sh${NC}"
         echo -e "                                                                                                      ${RED}Find the victims' imgs in cd tools/phishers/imgs${NC}"
-        read -p "                                                                                                      $(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
+        read -p "                                                                                                      ${RED}Press [Enter] to return to the menu or exit...${NC}"
         ;;
     2)
         # Display a message and wait for user to press Enter
         echo -e "                                                                                                      ${RED}Start GPS pin pointer by saying cd tools/phishers and then bash gps.sh${NC}"
         echo -e "                                                                                                      ${RED}Find the victims' logs in cd tools/phishers/ and then open logs.txt${NC}"
-        read -p "                                                                                                      $(echo -e ${RED}Press [Enter] to return to the menu or exit...${NC})"
+        read -p "                                                                                                      ${RED}Press [Enter] to return to the menu or exit...${NC}"
         ;;
     0)
         # Exit the script
