@@ -1,7 +1,9 @@
 import os
 
 def display_menu():
-    print("""
+    red = "\033[31m"  # ANSI escape code for red text
+    reset = "\033[0m"  # ANSI escape code to reset the color
+    print(f"""{red}
                                                                      ______
                                                                   .-"      "-.
                                                                 /            \\
@@ -11,21 +13,21 @@ def display_menu():
                                                                |/     /\\     \\|
                                                       (@_       (_     ^^     _)
                                                _     ) \\_______\\__|IIIIII|__/__________________________
-                                               (_)@8@8{}<________|-\IIIIII/-|___________________________>
+                                               (_)@8@8{{}}<________|-\IIIIII/-|___________________________>
                                                      )_/        \\          /
                                                      (@           `--------`
                                                                  THE GHOST SQUAD
                                                                   Tool: T.G.S
-                                                               Version: 1.0.0-Alpha
+                                                               Version: 1.0.1-Alpha
                                                   Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
     """)
-    print("                                                1: IP Tools")
-    print("                                                2: Phishers(Gps pin pointer/Camera Phisher)")
-    print("                                                         ---------------")
-    print("                                                9: Install requirements")
-    print("                                                10: Updates")
-    print("                                                11: Update Tool")
-    print("                                                0: Exit")
+    print(f"{red}                                                1: IP Tools{reset}")
+    print(f"{red}                                                2: Phishers(Gps pin pointer/Camera Phisher){reset}")
+    print(f"{red}                                                         ---------------{reset}")
+    print(f"{red}                                                9: Install requirements{reset}")
+    print(f"{red}                                                10: Updates{reset}")
+    print(f"{red}                                                11: Update Tool{reset}")
+    print(f"{red}                                                0: Exit{reset}")
 
 def clear_screen():
     os.system('clear')  # Clear the screen
@@ -34,7 +36,7 @@ def main():
     while True:
         clear_screen()  # Clear the screen at the start of each loop
         display_menu()
-        choice = input("                                                Enter your choice: ").strip()
+        choice = input("\033[31m                                                Enter your choice: \033[0m").strip()
         
         if choice == '1':
             os.system('python3 tools/ip_tools/ipinfo.py')
@@ -51,10 +53,10 @@ def main():
         elif choice == '11':
             os.system('bash update.sh')
         elif choice == '0':
-            print("Exiting...")
+            print("\033[31mExiting...\033[0m")
             break
         else:
-            print("Invalid choice, please enter 1 or 0.")
+            print("\033[31mInvalid choice, please enter 1 or 0.\033[0m")
 
 if __name__ == "__main__":
     main()
