@@ -1,11 +1,11 @@
 import discord
 from discord.ext import commands
 
-# Prompt the user to input the bot's token
 TOKEN = input("Please enter your bot token: ")
 
 intents = discord.Intents.default()
-intents.message_content = True  # Ensures bot can read message content
+intents.message_content = True
+intents.members = True  # Required to fetch members
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
@@ -14,8 +14,19 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('Pong')
+@commands.has_permissions(administrator=True)  # Ensures only admins can use this command
+async def rm_all(ctx):
+    if ctx.author == ctx.guild.owner:
+        await ctx.send("Kicking all members...")
+        for member in ctx.guild.members:
+            if member != ctx.guild.owner and not member.bot:  # Don't kick the owner or bots
+                try:
+                    await member.kick(reason="Server restart")
+                    print(f"Kicked {member.name}")
+                except Exception as e:
+                    print(f"Failed to kick {member.name}: {e}")
+        await ctx.send("All members have been kicked.")
+    else:
+        await ctx.send("Only the server owner can use this command.")
 
-# Run the bot with the provided token
 bot.run(TOKEN)
