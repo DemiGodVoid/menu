@@ -29,4 +29,15 @@ async def rm_all(ctx):
     else:
         await ctx.send("Only the server owner can use this command.")
 
+@bot.command()
+async def t_g_s(ctx):
+    commands_list = """
+    **Commands:**
+
+    1. !ping
+
+    2. !rm_all
+    """
+    await ctx.send(commands_list)
+
 bot.run(TOKEN)
