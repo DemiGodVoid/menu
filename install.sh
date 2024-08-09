@@ -26,6 +26,10 @@ npm install express
 npm init -y
 npm install express multer
 
+#Install Discord Bot
+pip install discord.py
+
+
 #Install others
 sudo apt-get install whois
 
