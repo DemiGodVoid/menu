@@ -23,6 +23,7 @@ def display_menu():
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
     print(f"{red}                                                                                        2: Phishers{reset}")
+    print(f"{red}                                                                                        3: Discord Rekting Bot{reset}")
     print(f"{red}                                                                                             ---------------{reset}")
     print(f"{red}                                                                                        9: Install requirements{reset}")
     print(f"{red}                                                                                        10: Updates{reset}")
@@ -43,6 +44,9 @@ def main():
 
         elif choice == '2':
             os.system('bash tools/phishers/pick.sh')
+
+        elif choice == '3':
+            os.system('python3 tools/Bots/DiscordBot.py')
 
         elif choice == '9':
             os.system('bash install.sh')
