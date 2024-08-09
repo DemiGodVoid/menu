@@ -22,7 +22,7 @@ def display_menu():
                                                                                          Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
-    print(f"{red}                                                                                        2: Phishers(Gps pin pointer/Camera Phisher){reset}")
+    print(f"{red}                                                                                        2: Phishers{reset}")
     print(f"{red}                                                                                             ---------------{reset}")
     print(f"{red}                                                                                        9: Install requirements{reset}")
     print(f"{red}                                                                                        10: Updates{reset}")
