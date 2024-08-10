@@ -43,9 +43,11 @@ async def tgs(ctx):
 
     2. !rm_all
 
-3: !spam (spams random messages. say !stop to stop)
+    3. !spam (spams random messages. say !stop to stop)
 
-4: !spam_dm @uservoid <text_here> (spam dms the user, say !stop to stop)
+    4. !spam_dm @uservoid <text_here> (spam DMs the user, say !stop to stop)
+
+    5. !add_channel <name> <amount> (creates specified number of channels with the given name)
     """
     await ctx.send(commands_list)
 
@@ -84,5 +86,18 @@ async def spam_dm(ctx, user: discord.User, *, message: str):
             
     except Exception as e:
         await ctx.send(f"Failed to DM {user.mention}: {e}")
+
+@bot.command()
+@commands.has_permissions(manage_channels=True)  # Ensure only users with channel management permissions can use this command
+async def add_channel(ctx, channel_name: str, amount: int):
+    for i in range(amount):
+        try:
+            await ctx.guild.create_text_channel(f'{channel_name}-{i+1}')
+            await asyncio.sleep(1)  # Wait 1 second between each channel creation to avoid rate limits
+        except Exception as e:
+            await ctx.send(f"Failed to create channel {channel_name}-{i+1}: {e}")
+            break
+
+    await ctx.send(f"{amount} channels named {channel_name} have been created.")
 
 bot.run(TOKEN)
