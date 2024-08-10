@@ -9,9 +9,9 @@ def main():
     
     try:
         if choice == '1':
-            os.system("python3 DiscordRektBot.py")
+            os.system("python3 tools/Bots/DiscordRektBot.py")
         elif choice == '2':
-            os.system("python3 NormalDiscordBot.py")
+            os.system("python3 tools/Bots/NormalDiscordBot.py")
         else:
             print("Invalid choice. Please run the script again.")
     except Exception as e:
