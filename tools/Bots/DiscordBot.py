@@ -43,9 +43,9 @@ async def tgs(ctx):
 
     2. !rm_all
 
-    3: !spam (spams random messages. say !stop to stop it)
+3: !spam (spams random messages. say !stop to stop it)
 
-    4: !spam_dm @uservoid <text_here> (spam dms the user)
+4: !spam_dm @uservoid <text_here> (spam dms the user)
     """
     await ctx.send(commands_list)
 
