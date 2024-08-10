@@ -30,7 +30,7 @@ async def rm_all(ctx):
         await ctx.send("Only the server owner can use this command.")
 
 @bot.command()
-async def t_g_s(ctx):
+async def tgs(ctx):
     commands_list = """
     **Commands:**
 
