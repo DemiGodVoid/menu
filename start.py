@@ -1,6 +1,6 @@
 import os
 import signal
-import psutil  # You'll need to install the psutil package
+import psutil
 
 def display_menu():
     red = "\033[31m"  # ANSI escape code for red text
@@ -35,11 +35,6 @@ def display_menu():
 def clear_screen():
     os.system('clear')  # Clear the screen
 
-def kill_process_by_name(name):
-    for proc in psutil.process_iter(['pid', 'name']):
-        if name in proc.info['name']:
-            os.kill(proc.info['pid'], signal.SIGKILL)
-
 def main():
     while True:
         clear_screen()  # Clear the screen at the start of each loop
@@ -53,9 +48,8 @@ def main():
             os.system('bash tools/phishers/pick.sh')
 
         elif choice == '3':
-            # Kill the current running script (assuming it could be the main script itself)
-            kill_process_by_name('python3')  # Kills any running Python scripts
-            os.system('python3 tools/Bots/Pick.py')
+            # Start Pick.py in a new process and replace the current process
+            os.execvp('python3', ['python3', 'tools/Bots/Pick.py'])
 
         elif choice == '9':
             os.system('bash install.sh')
