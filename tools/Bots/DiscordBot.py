@@ -39,9 +39,9 @@ async def tgs(ctx):
     commands_list = """
     **Commands:**
 
-    1. !ping
+    1. !ping (checks if the bot is active)
 
-    2. !rm_all
+    2. !rm_all (removes everyone from the discord server)
 
     3. !spam (spams random messages. say !stop to stop)
 
