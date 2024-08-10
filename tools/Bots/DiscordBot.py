@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-import random  # Import random module for random choice
+import random
+import asyncio  # Import asyncio module
 
 TOKEN = input("Please enter your bot token: ")
 
@@ -9,6 +10,9 @@ intents.message_content = True
 intents.members = True  # Required to fetch members
 
 bot = commands.Bot(command_prefix="!", intents=intents)
+
+# Global variable to control spam loop
+spam_active = False
 
 @bot.event
 async def on_ready():
@@ -47,10 +51,18 @@ async def ping(ctx):
 
 @bot.command()
 async def spam(ctx):
+    global spam_active
+    spam_active = True
     messages = ["Hey", "NOOO", "BYE"]
-    while True:
+    while spam_active:
         message = random.choice(messages)  # Choose a random message
         await ctx.send(message)
         await asyncio.sleep(1)  # Wait for 1 second before sending the next message
+
+@bot.command()
+async def stop(ctx):
+    global spam_active
+    spam_active = False
+    await ctx.send("Spam stopped.")
 
 bot.run(TOKEN)
