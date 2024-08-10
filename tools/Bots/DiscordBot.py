@@ -53,7 +53,7 @@ async def ping(ctx):
 async def spam(ctx):
     global spam_active
     spam_active = True
-    messages = ["Hey", "NOOO", "BYE"]
+    messages = ["Hey", "NOOO", "BYE", "The Ghost Squad Team Says Hi.", "This server is under attack! Hide the kittens!!!!", "Even Banning me won't stop what comes next. hahahahahahhahahahahahahahahahahhahahahahhahahahahahahahahahahahahhahahaha"]
     while spam_active:
         message = random.choice(messages)  # Choose a random message
         await ctx.send(message)
