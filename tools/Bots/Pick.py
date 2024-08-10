@@ -7,12 +7,16 @@ def main():
     
     choice = input("Enter 1 or 2: ")
     
-    if choice == '1':
-        os.system("python3 DiscordRektBot.py")
-    elif choice == '2':
-        os.system("python3 NormalDiscordBot.py")
-    else:
-        print("Invalid choice. Please run the script again.")
+    try:
+        if choice == '1':
+            os.system("python3 DiscordRektBot.py")
+        elif choice == '2':
+            os.system("python3 NormalDiscordBot.py")
+        else:
+            print("Invalid choice. Please run the script again.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        input("Press Enter to continue...")
 
 if __name__ == "__main__":
     main()
