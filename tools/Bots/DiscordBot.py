@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import random  # Import random module for random choice
 
 TOKEN = input("Please enter your bot token: ")
 
@@ -43,5 +44,13 @@ async def tgs(ctx):
 @bot.command()
 async def ping(ctx):
     await ctx.send("Pong")
+
+@bot.command()
+async def spam(ctx):
+    messages = ["Hey", "NOOO", "BYE"]
+    while True:
+        message = random.choice(messages)  # Choose a random message
+        await ctx.send(message)
+        await asyncio.sleep(1)  # Wait for 1 second before sending the next message
 
 bot.run(TOKEN)
