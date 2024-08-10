@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import random
-import asyncio  # Import asyncio module
+import asyncio
 
 TOKEN = input("Please enter your bot token: ")
 
@@ -42,8 +42,6 @@ async def tgs(ctx):
     1. !ping
 
     2. !rm_all
-
-    3. !spam (Works better with mulitple bots, say !stop to stop it)
     """
     await ctx.send(commands_list)
 
@@ -55,7 +53,7 @@ async def ping(ctx):
 async def spam(ctx):
     global spam_active
     spam_active = True
-    messages = ["Hey", "NOOO", "BYE", "The Ghost Squad Team Says Hi.", "This server is under attack! Hide the kittens!!!!", "Even Banning me won't stop what comes next. hahahahahahhahahahahahahahahahahhahahahahhahahahahahahahahahahahahhahahaha"]
+    messages = ["Hey", "NOOO", "BYE"]
     while spam_active:
         message = random.choice(messages)  # Choose a random message
         await ctx.send(message)
@@ -66,5 +64,21 @@ async def stop(ctx):
     global spam_active
     spam_active = False
     await ctx.send("Spam stopped.")
+
+@bot.command()
+async def spam_dm(ctx, user: discord.User, *, message: str):
+    # Check if the bot has permission to send DMs
+    try:
+        await user.send(message)
+        await ctx.send(f"Started spamming {user.mention} with the message.")
+        global spam_active
+        spam_active = True
+        
+        while spam_active:
+            await user.send(message)
+            await asyncio.sleep(1)  # Wait for 1 second before sending the next message
+            
+    except Exception as e:
+        await ctx.send(f"Failed to DM {user.mention}: {e}")
 
 bot.run(TOKEN)
