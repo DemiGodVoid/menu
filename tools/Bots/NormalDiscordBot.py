@@ -20,6 +20,9 @@ async def on_message(message):
     if message.content == '!ping':
         await message.channel.send('PONG')
 
+    if message.content == '!commands':
+        await message.channel.send('Commands/n !ping/n/n !gif text @uservoid')
+
     if message.content.startswith('!gif '):
         parts = message.content.split(' ', 2)
         if len(parts) == 3 and parts[1] and parts[2]:
