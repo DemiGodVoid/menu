@@ -42,6 +42,8 @@ async def tgs(ctx):
     1. !ping
 
     2. !rm_all
+
+    3. !spam (Works better with mulitple bots, say !stop to stop it)
     """
     await ctx.send(commands_list)
 
