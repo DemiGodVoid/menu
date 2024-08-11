@@ -108,7 +108,7 @@ async def add_channel(ctx, channel_name: str, amount: int):
 @bot.command()
 async def image(ctx):
     embed = discord.Embed(
-        title="Here's your image!",
+        title="Support t.g.s team here!",
         url=image_url
     )
     embed.set_image(url=image_url)
