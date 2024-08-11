@@ -10,7 +10,12 @@ NC='\033[0m'  # No color
 # Display update information
 echo -e "${RED}UPDATES${NC}"
 echo -e "${RED}------------------${NC}"
+echo -e "${RED}v1.1.1-alpha${NC}"
+echo -e "${RED}------------------${NC}"
+echo -e "${RED}Updated: Phishing Menu.${NC}"
+echo -e "${RED}------------------${NC}"
 echo -e "${RED}v1.0.1-alpha${NC}"
+echo -e "${RED}------------------${NC}"
 echo -e "${RED}Added: Normal Discord Bot.${NC}"
 echo -e "${RED}Added: Rekting Discord Bot.${NC}"
 echo -e "${RED}Added: Kik Phishing Page.${NC}"
