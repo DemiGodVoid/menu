@@ -20,7 +20,7 @@ def display_menu():
                                                                                                (@          `--------`
                                                                                                          THE GHOST SQUAD
                                                                                                            Tool: T.G.S
-                                                                                                       Version: 1.0.1-Alpha
+                                                                                                       Version: 1.1.1-Alpha
                                                                                          Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
