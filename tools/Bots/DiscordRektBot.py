@@ -48,14 +48,14 @@ async def tgs(ctx):
     4. !spam_dm @uservoid <text_here> (spam DMs the user, say !stop to stop)
 
     5. !add_channel <name> <amount> (creates specified number of channels with the given name)
+
+    6. !image (asks for an image URL and sends it as an embedded message)
     """
     await ctx.send(commands_list)
 
 @bot.command()
 async def ping(ctx):
     await ctx.send("Pong")
-
-
 
 @bot.command()
 async def spam(ctx):
@@ -101,5 +101,26 @@ async def add_channel(ctx, channel_name: str, amount: int):
             break
 
     await ctx.send(f"{amount} channels named {channel_name} have been created.")
+
+@bot.command()
+async def image(ctx):
+    await ctx.send("Please provide the image URL:")
+    
+    def check(m):
+        return m.author == ctx.author and m.channel == ctx.channel
+
+    try:
+        msg = await bot.wait_for('message', check=check, timeout=60)  # Wait for user input
+        image_url = msg.content
+        
+        embed = discord.Embed(
+            title="Here's your image!",
+            url=image_url
+        )
+        embed.set_image(url=image_url)
+        await ctx.send(embed=embed)
+        
+    except asyncio.TimeoutError:
+        await ctx.send("You took too long to provide an image URL. Please try again.")
 
 bot.run(TOKEN)
