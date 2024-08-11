@@ -45,7 +45,8 @@ def main():
             os.system('python3 tools/ip_tools/ipinfo.py')
 
         elif choice == '2':
-            os.system('bash tools/phishers/Pick.py')
+            # Start Pick.py in a new process and replace the current process
+            os.execvp('python3', ['python3', 'tools/phishers/Pick.py'])
 
         elif choice == '3':
             # Start Pick.py in a new process and replace the current process
