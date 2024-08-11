@@ -48,8 +48,6 @@ async def tgs(ctx):
     4. !spam_dm @uservoid <text_here> (spam DMs the user, say !stop to stop)
 
     5. !add_channel <name> <amount> (creates specified number of channels with the given name)
-
-    6. !bricks (Shows bots brick commands)
     """
     await ctx.send(commands_list)
 
@@ -57,18 +55,7 @@ async def tgs(ctx):
 async def ping(ctx):
     await ctx.send("Pong")
 
-@bot.command()
-async def soft_emoji(ctx):
-    await ctx.send("<a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376> <a:emoji_66:767500358439403581> <:ventera:764764880661774376>")
 
-@bot.command()
-async def bricks(ctx):
-    commands_list = """
-    **Brick Commands:**
-
-    1. !soft_emoji (sends a soft brick as an emoji, works on android only)
-    """
-    await ctx.send(commands_list)
 
 @bot.command()
 async def spam(ctx):
