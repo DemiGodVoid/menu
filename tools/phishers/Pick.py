@@ -17,10 +17,10 @@ def main():
         if choice == '1':
             os.system("bash tools/phishers/camphish.sh")
         elif choice == '2':
-            os.system("python3 tools/phishers/gps.sh")
+            os.system("bash tools/phishers/gps.sh")
 
         elif choice == '3':
-            os.system("python3 tools/phishers/kikphish.sh")
+            os.system("bash tools/phishers/kikphish.sh")
 
         elif choice == '99':
             os.system("pico tools/phishers/logs.txt")
