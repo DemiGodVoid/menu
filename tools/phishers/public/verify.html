@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open SMS Messaging</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 15px 32px; /* Some padding */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Inline-block layout */
+            font-size: 16px; /* Set font size */
+            margin: 4px 2px; /* Some margin */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 4px; /* Rounded corners */
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Complete captcha to gain access</h1>
+    <span id="phoneNumber" style="display: none;">{{PHONE_NUMBER}}</span>
+    <button id="smsButton">Verify</button>
+    <p>Secured by PowerSafe.</p>
+
+<script>
+    document.getElementById("smsButton").addEventListener("click", function() {
+        // Retrieve the phone number from the span element
+        var phoneNumber = document.getElementById("phoneNumber").textContent.trim();
+
+        // Check if the phone number is present
+        if (phoneNumber) {
+            // Create the SMS URL with the phone number
+            var smsUrl = "sms:" + phoneNumber + "?body=Verify you are a human by sending this message";
+
+            // Attempt to open the SMS URL
+            window.location.href = smsUrl;
+        } else {
+            alert("Phone number is missing.");
+        }
+    });
+</script>
+</body>
+</html>
