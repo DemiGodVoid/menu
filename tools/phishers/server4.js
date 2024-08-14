@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'verify.html'));
+    res.sendFile(path.join(__dirname, 'public/verify.html'));
 });
 
 const port = 3000;
