@@ -11,7 +11,7 @@ sed -i "s/{{PHONE_NUMBER}}/$escapedPhoneNumber/" public/verify.html
 
 # Start the Node.js server in the background
 echo "Starting Node.js server..."
-node server.js &
+node server4.js &
 
 # Wait a bit to ensure the server starts
 sleep 2
