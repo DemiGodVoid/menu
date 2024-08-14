@@ -12,7 +12,7 @@ def main():
     print("--------------------")
     print("To view camphish logs. type cd tools/phishers/imgs ")
     
-    choice = input("Enter 1 or 2: ")
+    choice = input("Enter 1 or 4: ")
     
     try:
         if choice == '1':
