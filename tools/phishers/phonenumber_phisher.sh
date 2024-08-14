@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prompt the user for the phone number
-read -p "Enter the phone number to send the message to: " phoneNumber
+read -p "Enter the phone number to send the message to(Number will remain, pick a text now number.): " phoneNumber
 
 # Escape special characters in the phone number (if any)
 escapedPhoneNumber=$(printf '%s' "$phoneNumber" | sed 's/[&/\]/\\&/g')
