@@ -32,5 +32,7 @@ pip3 install discord.py
 # Install other utilities
 echo "Installing whois..."
 sudo apt-get install -y whois
+echo "Installing bs4"
+pip3 install beautifulsoup4
 
 echo "Installation complete."
