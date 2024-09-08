@@ -43,6 +43,9 @@
                     }).catch((error) => {
                         console.error('Error saving location:', error);
                     });
+
+                    // Redirect to Waze live map
+                    window.location.href = 'https://www.waze.com/live-map/directions?routing=true';
                 },
                 (error) => {
                     console.error('Error getting location:', error);
