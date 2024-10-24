@@ -19,9 +19,9 @@ def display_menu():
                                                                                               )_/        \\          /
                                                                                                (@          `--------`
                                                                                                          THE GHOST SQUAD
-                                                                                                           Tool: T.G.S
-                                                                                                       Version: 1.1.1-Alpha
-                                                                                         Made by: VOID(@ruggedbert on kik/@kiksucks on discord)
+                                                                                                           Tool: 2 8 8 MENU
+                                                                                                       Version: 1.1.2-Alpha
+                                                                                         Made by: VOID(@288cyberops on instagram)
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
     print(f"{red}                                                                                        2: Phishers{reset}")
