@@ -12,6 +12,10 @@ sudo apt-get install -y python3-pip
 echo "Installing requests module..."
 pip3 install requests
 
+echo "Installing selenium for website injections"
+pip install selenium
+
+
 # Install ngrok using snap
 echo "Installing ngrok..."
 sudo snap install ngrok
