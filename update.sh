@@ -17,6 +17,6 @@ fi
 
 # Clone the repository from GitHub
 echo -e "${RED}Cloning the repository...${NC}"
-git clone https://github.com/DemiGodVoid/t.g.s
+git clone https://github.com/DemiGodVoid/menu
 
 echo -e "${RED}Update complete.${NC}"
