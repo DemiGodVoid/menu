@@ -21,7 +21,7 @@ def display_menu():
                                                                                                          THE GHOST SQUAD
                                                                                                            Tool: 2 8 8 MENU
                                                                                                        Version: 1.1.2-Alpha
-                                                                                         Made by: VOID(@288cyberops on instagram)
+                                                                                                      Made by:@288cyberops on instagram
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
     print(f"{red}                                                                                        2: Phishers{reset}")
