@@ -10,6 +10,11 @@ NC='\033[0m'  # No color
 # Display update information
 echo -e "${RED}UPDATES${NC}"
 echo -e "${RED}---------------------------${NC}"
+echo -e "${RED}V.1.1.5${NC}"
+echo -e "${RED}---------------------------${NC}"
+echo -e "${RED}Added: ISH installer for ios users${NC}"
+echo -e "${RED}Added: XSS Injector for pentesting${NC}"
+echo -e "${RED}---------------------------${NC}"
 echo -e "${RED}v1.1.1-alpha${NC}"
 echo -e "${RED}~~~~~~~~~~~~~~~~~~~~~~~~~~~${NC}"
 echo -e "${RED}Added: Pentesting Tools.${NC}"
