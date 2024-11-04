@@ -20,7 +20,7 @@ def display_menu():
                                                                                                (@          `--------`
                                                                                                          THE GHOST SQUAD
                                                                                                            Tool: 2 8 8 MENU
-                                                                                                       Version: 1.1.2-Alpha
+                                                                                                       Version: 1.1.5-Alpha
                                                                                                       Made by:@288cyberops on instagram
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
