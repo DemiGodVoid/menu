@@ -50,7 +50,8 @@ pip3 install discord.py
 
 # Install ngrok
 echo "Installing ngrok..."
-curl -O https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz
-tar -xvzf ~/menu/ngrok-v3-stable-linux-arm64.tgz -C /usr/local/bin
+
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz
+tar -xvzf ~/ngrok-v3-stable-linux-arm64.tgz -C /usr/local/bin
 
 echo "Installation complete."
