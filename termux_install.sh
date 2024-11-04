@@ -2,41 +2,39 @@
 
 # Update package lists
 echo "Updating package lists..."
-sudo apt-get update
+pkg update -y
 
 # Install pip if not already installed
 echo "Installing pip..."
-sudo apt-get install -y python3-pip
+pkg install -y python3-pip
 
 # Install the requests module using pip
 echo "Installing requests module..."
-pip3 install requests
-
-echo "Installing selenium for website injections"
-pip install selenium
-
-
-# Install ngrok using snap
-echo "Installing ngrok..."
-sudo snap install ngrok
+pip install requests
 
 # Install Node.js
-echo "Installing node.js..."
-sudo apt install -y nodejs npm
+echo "Installing Node.js..."
+pkg install -y nodejs
 npm install
 npm install express multer
 
 npm init -y
 npm install express multer
 
+# Install ngrok manually
+echo "Installing ngrok..."
+pkg install -y wget
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-arm.zip
+unzip ngrok-stable-linux-arm.zip
+chmod +x ngrok
+mv ngrok $PREFIX/bin/
+
 # Install Discord Bot library
 echo "Installing discord.py..."
-pip3 install discord.py
+pip install discord.py
 
 # Install other utilities
 echo "Installing whois..."
-sudo apt-get install -y whois
-echo "Installing bs4"
-pip3 install beautifulsoup4
+pkg install -y whois
 
 echo "Installation complete."
