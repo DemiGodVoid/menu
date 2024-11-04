@@ -8,6 +8,10 @@ apk update
 echo "Installing python3..."
 apk add python3 
 
+#install psutil 
+echo "Installing psutil..."
+apk add py3-psutil 
+
 # Install pip if not already installed
 echo "Installing pip..."
 apk add py3-pip
@@ -18,6 +22,7 @@ pip3 install requests
 
 echo "Installing selenium for website injections"
 pip3 install selenium
+pip3 install typing_extensions==4.7.1
 
 # Install Node.js
 echo "Installing node.js..."
@@ -29,19 +34,24 @@ npm init -y
 npm install express 
 npm install multer
 
-# Install Discord Bot library
-echo "Installing discord.py..."
-pip3 install discord.py
-
 # Install other utilities
 echo "Installing whois..."
-sudo apt-get install -y whois
+apk add whois
+
 echo "Installing bs4"
 pip3 install beautifulsoup4
 
-# Install ngrok using snap
+# Install Discord Bot library
+echo "Installing discord.py..."
+apk add py3-aiohttp
+pip3 install discord.py
+
+#!/bin/bash
+
+# Install ngrok
 echo "Installing ngrok..."
-curl -O https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz
-tar -xvzf ~/menu/ngrok-v3-stable-linux-arm64.tgz -C /usr/local/bin
+
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz
+tar -xvzf ~/ngrok-v3-stable-linux-arm64.tgz -C /usr/local/bin
 
 echo "Installation complete."
