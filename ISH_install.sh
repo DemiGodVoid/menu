@@ -22,6 +22,7 @@ pip3 install requests
 
 echo "Installing selenium for website injections"
 pip3 install selenium
+pip3 install typing_extensions==4.7.1
 
 # Install Node.js
 echo "Installing node.js..."
