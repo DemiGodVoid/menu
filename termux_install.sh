@@ -6,7 +6,7 @@ pkg update -y
 
 # Install pip if not already installed
 echo "Installing pip..."
-pkg install -y python3-pip
+pkg install -y python-pip
 
 # Install the requests module using pip
 echo "Installing requests module..."
