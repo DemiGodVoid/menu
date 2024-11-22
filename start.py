@@ -32,6 +32,7 @@ def display_menu():
     print(f"{red}                                                                                        10: Updates{reset}")
     print(f"{red}                                                                                        11: Update Tool{reset}")
     print(f"{red}                                                                                        12: Add ngrok auth token{reset}")
+    print(f"{red}                                                                                        13: Kill processes on port 3000{reset}")
     print(f"{red}                                                                                        0: Exit{reset}")
 
 def clear_screen():
@@ -69,6 +70,9 @@ def main():
             
         elif choice == '12':
             os.system('python3 ngrok_auth.py')
+            
+        elif choice == '13':
+            os.system('python3 open3000.py')
             
         elif choice == '0':
             print("\033[31mExiting...\033[0m")
