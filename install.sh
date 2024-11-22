@@ -25,9 +25,9 @@ sudo snap install ngrok
 echo "Installing node.js..."
 sudo apt install -y nodejs npm
 npm install
-npm install express multer
 npm init -y
-npm install express multer
+npm install express
+npm install multer
 
 # Install Discord Bot library
 echo "Installing discord.py..."
