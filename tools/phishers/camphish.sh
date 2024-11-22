@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ~/menu/tools/phishers
+
 # Echo commands to the terminal
 echo "Starting main server.js..."
 
