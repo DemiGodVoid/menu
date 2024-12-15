@@ -8,6 +8,10 @@ apk update
 echo "Installing python3..."
 apk add python3 
 
+#install bash 
+echo "Installing bash..."
+apk add bash 
+
 #install psutil 
 echo "Installing psutil..."
 apk add py3-psutil 
