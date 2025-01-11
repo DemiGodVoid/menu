@@ -3,6 +3,17 @@ from discord.ext import commands
 import random
 import asyncio
 
+
+
+print("""
+          ╔════════════════╦═════════════╦═════════════╦════════════╦════════════╗
+          ║      BOT       ║  PYTHON     ║   REKTER    ║ COMMANDS   ║    MODE    ║
+          ╠════════════════╬═════════════╬═════════════╬════════════╬════════════╣
+          ║   COST:$10     ║    JNFL     ║     MENU    ║     6      ║   HARMFUL  ║
+          ╚════════════════╩═════════════╩═════════════╩════════════╩════════════╝
+
+""")
+
 TOKEN = input("Please enter your bot token: ")
 
 # Ask for the image URL in the terminal
