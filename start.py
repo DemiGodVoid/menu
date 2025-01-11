@@ -18,10 +18,10 @@ def display_menu():
                                                                                        (_)@8@8{{}}<________|-\IIIIII/-|___________________________>
                                                                                               )_/        \\          /
                                                                                                (@          `--------`
-                                                                                                         THE GHOST SQUAD
-                                                                                                           Tool: 2 8 8 MENU
-                                                                                                       Version: 1.1.5-Alpha
-                                                                                                      Made by:@288cyberops on instagram
+                                                                                                         JOKAS NATION FOR LIFE
+                                                                                                           Tool: HACKING MENU
+                                                                                                       Version: 1.1.6-Alpha
+                                                                                                      Made by:@B030BS on instagram
     """)
     print(f"{red}                                                                                        1: IP Tools{reset}")
     print(f"{red}                                                                                        2: Phishers{reset}")
