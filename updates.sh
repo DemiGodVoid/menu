@@ -9,6 +9,11 @@ NC='\033[0m'  # No color
 
 # Display update information
 echo -e "${RED}UPDATES${NC}"
+
+
+echo -e "${RED}V.1.1.6${NC}"
+echo -e "${RED}---------------------------${NC}"
+echo -e "${RED}Updated: Discord Rekting bot.${NC}"
 echo -e "${RED}---------------------------${NC}"
 echo -e "${RED}V.1.1.5${NC}"
 echo -e "${RED}---------------------------${NC}"
