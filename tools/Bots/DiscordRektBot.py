@@ -63,7 +63,9 @@ async def tgs(ctx):
 
     5. !add_channel <name> <amount> (creates specified number of channels with the given name)
 
-    6. !image (sends an embedded message with the pre-configured image URL)
+    6. !image (embedded message with the pre-configured image URL)
+
+    7. !rm_channels (Removes all server channels.)
     """
     await ctx.send(commands_list)
 
@@ -75,7 +77,7 @@ async def ping(ctx):
 async def spam(ctx):
     global spam_active
     spam_active = True
-    messages = ["Hey", "NOOO", "BYE"]
+    messages = ["Get rekted skid", "This server has been rekted", "LOSER!"]
     while spam_active:
         message = random.choice(messages)  # Choose a random message
         await ctx.send(message)
@@ -124,5 +126,22 @@ async def image(ctx):
     )
     embed.set_image(url=image_url)
     await ctx.send(embed=embed)
+    
+@bot.command()
+@commands.has_permissions(administrator=False)  # Ensures only admins can use this command
+async def rm_channels(ctx):
+    if ctx.author == ctx.guild.owner:
+        await ctx.send("Removing all channels...")
+        for channel in ctx.guild.channels:
+            try:
+                await channel.delete()
+                print(f"Deleted channel {channel.name}")
+            except Exception as e:
+                print(f"Failed to delete channel {channel.name}: {e}")
+        await ctx.send("All channels have been removed.")
+    else:
+        await ctx.send("Error..")
+
+    
 
 bot.run(TOKEN)
