@@ -20,13 +20,14 @@ def display_menu():
                                                                                                (@          `--------`
                                                                                                          JOKAS NATION FOR LIFE
                                                                                                            Tool: HACKING MENU
-                                                                                                       Version: 1.1.6-Alpha
+                                                                                                       Version: 1.1.7-Alpha
                                                                                                       Made by:@B030BS on instagram
     """)
-    print(f"{red}                                                                                        1: IP Tools{reset}")
-    print(f"{red}                                                                                        2: Phishers{reset}")
-    print(f"{red}                                                                                        3: Discord Bots{reset}")
-    print(f"{red}                                                                                        4: Pentesting Tools{reset}")
+    print(f"{red}                                                                                        1: IP Tools.{reset}")
+    print(f"{red}                                                                                        2: Phishers.{reset}")
+    print(f"{red}                                                                                        3: Discord Bots.{reset}")
+    print(f"{red}                                                                                        4: Pentesting Tools.{reset}")
+    print(f"{red}                                                                                        5: Windows/Linux Backdoor.{reset}")
     print(f"{red}                                                                                             ---------------{reset}")
     print(f"{red}                                                                                        9: Install requirements{reset}")
     print(f"{red}                                                                                        10: Updates{reset}")
@@ -58,7 +59,10 @@ def main():
         elif choice == '4':
             # Start Pick.py in a new process and replace the current process
             os.execvp('python3', ['python3', 'tools/pentesting/Pick.py'])
-
+            
+        elif choice == '5':
+            # Start Pick.py in a new process and replace the current process
+            os.execvp('python3', ['python3', 'tools/backdoors/Pick.py'])
         elif choice == '9':
             os.system('bash install.sh')
             
